@@ -5,7 +5,7 @@ public class Book implements Displayable {
     private String author;
     private int year;
 
-    // Конструктор для установки всех полей
+    // Конструктор
     public Book(String title, String author, int year) {
         this.title = title;
         this.author = author;
@@ -14,8 +14,11 @@ public class Book implements Displayable {
 
     @Override
     public void display() {
-        System.out.println("Название: " + title);
-        System.out.println("Автор: " + author);
-        System.out.println("Год издания: " + year);
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Название книги: " + title + "\nАвтор: " + author + "\nГод издания: " + year;
     }
 }
