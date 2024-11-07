@@ -41,19 +41,31 @@ public class Car implements Drivable {
 
     @Override
     public void start() {
-        isRunning = true;
-        System.out.println("Автомобиль " + make + " " + model + " запущен.");
+        if (!isRunning) {
+            isRunning = true;
+            System.out.println("Автомобиль " + make + " " + model + " запущен.");
+        } else {
+            System.out.println("Автомобиль уже заведен.");
+        }
     }
 
     @Override
     public void stop() {
-        isRunning = false;
-        System.out.println("Автомобиль " + make + " " + model + " остановлен.");
+        if (isRunning) {
+            isRunning = false;
+            System.out.println("Автомобиль " + make + " " + model + " остановлен.");
+        } else {
+            System.out.println("Автомобиль уже остановлен.");
+        }
     }
 
     @Override
     public void drive(double distance) {
-        System.out.println("Автомобиль " + make + " " + model + " едет на расстояние " + distance + " км.");
+        if (isRunning) {
+            System.out.println("Автомобиль " + make + " " + model + " едет на расстояние " + distance + " км.");
+        } else {
+            System.out.println("Автомобиль не заведен. Сначала его нужно завести.");
+        }
     }
 
     @Override

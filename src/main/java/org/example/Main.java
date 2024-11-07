@@ -53,5 +53,6 @@ public class Main {
         car.start();
         car.drive(100);
         car.stop();
+        car.drive(50);
     }
 }
